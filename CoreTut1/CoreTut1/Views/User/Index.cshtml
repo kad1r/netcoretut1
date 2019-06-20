@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Html.ViewData.Add("ToolBar", Model.ToolBar);
+}
+
+@*@Html.Partial("~/Views/General/_ToolBar.cshtml", Html.ViewData)*@
+@*@await Html.PartialAsync("_List", Model)*@
+@await Component.InvokeAsync("UserList")

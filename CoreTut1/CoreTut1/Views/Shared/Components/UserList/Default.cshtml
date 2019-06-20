@@ -1,0 +1,14 @@
+﻿@model UserVM
+
+@using Microsoft.AspNetCore.Mvc;
+@using Common.Dtos;
+@using Common.Enums;
+@using Common.Helpers;
+@using Common.Extensions;
+
+<ul>
+    @foreach (var item in Model.List)
+    {
+        <li>@item.Email</li>
+    }
+</ul>

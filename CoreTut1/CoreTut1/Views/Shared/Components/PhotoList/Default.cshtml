@@ -1,0 +1,19 @@
+﻿@model PhotoVM
+
+@using Microsoft.AspNetCore.Mvc;
+@using Common.Dtos;
+@using Common.Enums;
+@using Common.Helpers;
+@using Common.Extensions;
+
+<div class="list-records">
+    <ul>
+        @foreach (var item in Model.List)
+        {
+            <li>@(item.Album != null ? item.Album.Heading : string.Empty) - @item.PhotoUrl - @item.Sequence</li>
+        }
+    </ul>
+
+    <div class="clearfix"></div>
+    @Html.Raw(RazorHelper.GenerateTFoot(Model.RowCount, Model.PageCount, Model.Page, Url.Action("RefreshComponent", "Photo")))
+</div>
